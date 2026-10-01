@@ -101,7 +101,7 @@ Its readers are maintainers and contributors (humans and agents), but it is a pu
 
 Optional, repo-local; never inherited.
 
-A minimal, agent-specific document _complementary_ to the `README.md` and `CONTRIBUTING.md`. It answers _what does an agent need to know that it **cannot reliably infer** from existing documentation?_. Furthermore, it does **not replace or duplicate** existing documentation.
+A minimal, agent-specific document _complementary_ to the `README.md` and `CONTRIBUTING.md`. It answers _what does an agent need to know that it **cannot reliably infer** from existing documentation?_. Furthermore, it does **not replace** existing documentation, and does not duplicate the explanations in it.
 
 The audience for this document is strictly agents. While humans may read it too, the primary utility of this document is meant to be purely for agents. Any information relevant to a human should exist within another document (likely `README.md` or `CONTRIBUTING.md`). It should accelerate the agent's comprehension of the code base without excessive file reads and token usage.
 
@@ -162,7 +162,7 @@ Inherited org-wide by default; repo-local by exception.
 
 The behavioral standard for everyone participating in the project, and the route for reporting a violation. The org-wide [`CODE_OF_CONDUCT.md`](https://github.com/HarperFast/.github/blob/main/CODE_OF_CONDUCT.md) applies to every Harper repository.
 
-Override it only if a repo has a genuinely different standard or reporting path — a jointly-owned or foundation-governed project, for example. A repo-local copy that only restates the org text is drift waiting to happen; leave it inherited instead.
+Override it only if a repo has a genuinely different standard or reporting path — a jointly-owned or foundation-governed project, for example. Then link the org file for the baseline and state only what differs, as above. A repo-local copy that merely restates the org text is drift waiting to happen; leave it inherited instead.
 
 ## SECURITY.md
 
@@ -170,7 +170,9 @@ Inherited org-wide by default; repo-local by exception.
 
 How to report a vulnerability, and what a reporter can expect in return. The org-wide [`SECURITY.md`](https://github.com/HarperFast/.github/blob/main/SECURITY.md) is the default reporting path for every Harper repository, and GitHub surfaces it from the repo's Security tab even when the file is inherited.
 
-Override it when a repo needs its own disclosure terms — a different contact, a bug bounty scope, supported-version statements, or a published signing key. State what differs; don't restate what doesn't.
+Override it when a repo needs its own disclosure terms — a different contact, a bug bounty scope, supported-version statements, or a published signing key.
+
+A local file shadows the org one in full, and for this document that is a real hazard: a `SECURITY.md` carrying only a supported-versions table leaves the repo with no reporting route at all. Link the org file for the baseline and state only what differs beneath it, exactly as a repo-local `CONTRIBUTING.md` does.
 
 ## SUPPORT.md
 
@@ -178,4 +180,4 @@ Inherited org-wide by default; repo-local by exception.
 
 Where to go for help, which is deliberately not the same as where to report a bug. The org-wide [`SUPPORT.md`](https://github.com/HarperFast/.github/blob/main/SUPPORT.md) covers issues, Discord, Code of Conduct reports, and the customer support and `opensource@` contacts.
 
-Override it when a repo has its own support channel, or when it is unmaintained and readers need to be told so plainly. Otherwise leave it inherited.
+Override it when a repo has its own support channel, or when it is unmaintained and readers need to be told so plainly. Link the org file for the routes that still apply rather than dropping them — a local file replaces it in full. Otherwise leave it inherited.
