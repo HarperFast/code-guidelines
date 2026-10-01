@@ -105,6 +105,8 @@ A minimal, agent-specific document _complementary_ to the `README.md` and `CONTR
 
 The audience for this document is strictly agents. While humans may read it too, the primary utility of this document is meant to be purely for agents. Any information relevant to a human should exist within another document (likely `README.md` or `CONTRIBUTING.md`). It should accelerate the agent's comprehension of the code base without excessive file reads and token usage.
 
+That last point is why `AGENTS.md` may restate a bare command — `npm run build`, the test invocation — that `CONTRIBUTING.md` also documents: the agent gets it in one read instead of three. Keep the restatement to the command itself and leave the explanation in `CONTRIBUTING.md`, which stays the source of truth; when a command changes, `AGENTS.md` is one of the files to update. What does not belong here is a second copy of `CONTRIBUTING.md`.
+
 ### What belongs here
 
 - Facts or instructions that may seem obvious to a human, but would require the agent to read and understand specific project files
@@ -114,8 +116,8 @@ The audience for this document is strictly agents. While humans may read it too,
 ### What does not belong here
 
 - Project description or summary (README.md)
-- Contribution workflows (CONTRIBUTING.md)
-- Anything a human contributor would also benefit from reading (should go in any other document)
+- Contribution workflows: how to open a PR, commit conventions, the release process (CONTRIBUTING.md)
+- Prose written for a person — rationale, onboarding narrative, explanation. If a human contributor needs to _read_ it, it belongs in another document
 - Secrets of any kind: tokens, API keys, internal hostnames, or private endpoints. An agent that needs a credential reads it from the environment; the file naming that environment variable is public
 
 ### Template
