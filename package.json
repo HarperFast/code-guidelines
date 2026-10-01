@@ -3,6 +3,11 @@
 	"description": "Coding Guidelines for Harper repositories. Includes types, linting, and formatting.",
 	"version": "0.1.2",
 	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/HarperFast/code-guidelines.git"
+	},
+	"homepage": "https://github.com/HarperFast/code-guidelines#readme",
 	"files": [
 		"eslint.config.mjs",
 		"prettier.config.js",

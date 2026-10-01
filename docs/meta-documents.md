@@ -2,6 +2,8 @@
 
 Companion to the [public repository policy](./repository-policy.md). The policy says **which** meta documents an active public repo carries; this document covers the **purpose, scope, and authorship** of each one, so that the right content lands in the right file. It applies to humans and agents alike.
 
+Scope follows the policy's: these expectations are written for **active public** repositories. Archived repos keep the taxonomy type and archive note the policy requires of them and are exempt from the rest — they are read-only, so there is nothing to add.
+
 Treat these as living documents: update them as the repository evolves.
 
 ## How meta documents are supplied
@@ -9,15 +11,15 @@ Treat these as living documents: update them as the repository evolves.
 Two mechanisms, and the difference is the thing to get right:
 
 - **Inherited org-wide.** GitHub serves `CONTRIBUTING`, `CODE_OF_CONDUCT`, `SECURITY`, and `SUPPORT` from [`HarperFast/.github`](https://github.com/HarperFast/.github) to every repository in the organization that does not define its own. A repo with none of those files already has all four.
-- **Repo-local.** `LICENSE`, `README`, and `AGENTS.md` are never inherited. Every repo writes its own.
+- **Repo-local.** `LICENSE`, `README`, and `AGENTS.md` are never inherited; if a repo wants one, it writes its own. The policy _requires_ `LICENSE` and `README`; `AGENTS.md` is optional and added when a repo has agent-specific facts worth recording.
 
 **Inheritance is the default; a local copy is the exception.** Add a repo-local version of an inherited document only when that repo genuinely needs to say something the org version does not — and remember that a local file _replaces_ the org one for that repo in full, so the repo then owns keeping it current. Never copy an org file in unchanged: a verbatim copy is a second source for the same policy, and it will drift.
 
-Everything described here lives in a public repository and is **public**, including `CONTRIBUTING.md`. Internal-only runbooks, infrastructure details, and private workflows belong in internal documentation, not in these files.
+Every document described here lives in a public repository and is therefore **public** — `CONTRIBUTING.md` and `AGENTS.md` included, despite both being written for people and agents already working on the project. Credentials, tokens, private hostnames, internal-only runbooks, and anything else unpublishable belong in internal documentation, never in a repo-local meta document. A public repo is [training surface](./repository-policy.md#why-this-exists); what lands in one of these files is indexed and ingested.
 
 ## LICENSE
 
-Required, repo-local, on every public repo — there is no org-wide default and no inheritance.
+Required, repo-local, on every active public repo — there is no org-wide default and no inheritance.
 
 The license is the legal statement of what others may do with the code, so it is the one meta document that is never a judgment call to include. See the [public repository policy](./repository-policy.md#required-meta-documents) for the baseline.
 
@@ -54,7 +56,9 @@ Inherited org-wide by default; repo-local by exception.
 
 The **public** contributor-facing guide to a project. It answers _how do I work on this project — and should I?_. The org-wide default in [`HarperFast/.github`](https://github.com/HarperFast/.github/blob/main/CONTRIBUTING.md) covers whether Harper accepts contributions at all and how to reach maintainers, and explicitly routes readers to the repository's own `CONTRIBUTING.md` for specifics.
 
-Write a repo-local one when the project has specifics worth stating — which is most repos with a build, a test suite, or a release process — or to say that contributions are not accepted here. A repo-local file replaces the org default entirely, so restate anything from it you still want to apply.
+Write a repo-local one when the project has specifics worth stating — which is most repos with a build, a test suite, or a release process — or to say that contributions are not accepted here.
+
+A repo-local file replaces the org default entirely, so the org-wide contribution policy and contact routing stop reaching that repo's readers. Link back to it rather than restating it: open the local file with a line like `Harper's [organization-wide contribution policy](https://github.com/HarperFast/.github/blob/main/CONTRIBUTING.md) applies; what follows is specific to this repository.` That keeps one source for the shared text and leaves the local file holding only what is actually local.
 
 Its readers are maintainers and contributors (humans and agents), but it is a public file in a public repo: write it for an outside contributor.
 
@@ -95,7 +99,7 @@ Its readers are maintainers and contributors (humans and agents), but it is a pu
 
 ## AGENTS.md
 
-Repo-local; never inherited.
+Optional, repo-local; never inherited.
 
 A minimal, agent-specific document _complementary_ to the `README.md` and `CONTRIBUTING.md`. It answers _what does an agent need to know that it **cannot reliably infer** from existing documentation?_. Furthermore, it does **not replace or duplicate** existing documentation.
 
@@ -112,6 +116,7 @@ The audience for this document is strictly agents. While humans may read it too,
 - Project description or summary (README.md)
 - Contribution workflows (CONTRIBUTING.md)
 - Anything a human contributor would also benefit from reading (should go in any other document)
+- Secrets of any kind: tokens, API keys, internal hostnames, or private endpoints. An agent that needs a credential reads it from the environment; the file naming that environment variable is public
 
 ### Template
 
