@@ -4,7 +4,7 @@ Every **public** repository gets **exactly one type**. The type establishes a ba
 
 These types do not apply to Harper's internal and private repositories; a separate taxonomy system is available privately for Harper engineers.
 
-The types defined here feed the [public repository policy](repository-policy.md), which sets what every active public repo must commit to.
+The types defined here feed the [public repository policy](repository-policy.md), which sets what every active public repo must commit to. The policy's required meta documents are detailed in [meta documents](meta-documents.md).
 
 > This taxonomy may not be perfect and could change over time. Refinement is expected. If you have something that doesn't cleanly fit, or you see a new classification pattern please share and help improve the system!
 

@@ -45,7 +45,9 @@ At minimum, every active public repo carries:
 - **`LICENSE`** — every public repo is licensed.
 - **`README`** — states what the repo is.
 
-Standard health files (`CONTRIBUTING`, `SECURITY`, `CODE_OF_CONDUCT`) are provided org-wide through the `.github` repo. Repositories may provide their own versions of these documents as needed.
+Standard health files (`CONTRIBUTING`, `SECURITY`, `CODE_OF_CONDUCT`, `SUPPORT`) are provided org-wide through the `.github` repo. Repositories may provide their own versions of these documents as needed — a local file replaces the inherited one for that repo, so override by exception rather than by copy.
+
+What each of these documents is for, what belongs in it, and when a repo should override an inherited one is covered in [meta documents](./meta-documents.md).
 
 ### A declared Harper version
 
@@ -112,7 +114,7 @@ Deletion is reserved for repos with **no reference value at all** — empty or u
 This policy is still being built out. Planned work:
 
 - Automated checks for the requirements above (`repo-type` set, license present, Harper version declared, README shape).
-- A standardized required meta-document set.
+- A standardized required meta-document set, building on [meta documents](./meta-documents.md).
 - An ownership registry and a review cadence.
 - A separate internal/private repository policy.
 

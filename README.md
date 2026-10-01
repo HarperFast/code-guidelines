@@ -4,6 +4,14 @@ This repository contains code guideline tools and configurations for the Harper 
 
 > Currently exports shared configurations for Prettier, ESLint, and TS Node Type Checking. More tools will be added soon.
 
+## Guidelines
+
+Alongside the shared configurations, this repository is the home of Harper's written repository guidelines:
+
+- [Public repository policy](./docs/repository-policy.md) — what every active public Harper repo must commit to.
+- [Public repository taxonomy](./docs/repository-taxonomy.md) — the nine repository types and the maintenance contract each one carries.
+- [Meta documents](./docs/meta-documents.md) — purpose and scope of `LICENSE`, `README`, `CONTRIBUTING`, `AGENTS.md`, and the org-inherited health files.
+
 ## Quick Start
 
 1. `npm i --save-dev @harperfast/code-guidelines`
